@@ -1,7 +1,8 @@
-package gormelof.net.sausozluk;
+package gormelof.net.sausozluk.application;
 
 import android.app.Application;
 
+import gormelof.net.sausozluk.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 public class SauSozlukApplication extends Application {

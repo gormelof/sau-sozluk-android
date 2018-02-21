@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk;
+package gormelof.net.sausozluk.views;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import gormelof.net.sausozluk.R;
 import gormelof.net.sausozluk.helpers.BottomNavigationViewHelper;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
