@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- start app general colors -->
     <color name="colorPrimary">#222222</color>
     <color name="colorPrimaryDark">#272727</color>
     <color name="colorAccent">#53A245</color>
+    <!-- end app general colors -->
 
+    <!-- start bottom nav colors -->
     <color name="colorBottomMenuItem">#BDBDBD</color>
+    <!-- end bottom nav colors -->
+
+    <!-- start splash activity colors -->
+    <color name="colorSplashText">#BDBDBD</color>
+    <!-- end splash activity colors -->
 </resources>
