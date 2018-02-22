@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <!-- start app general colors -->
     <color name="colorPrimary">#222222</color>
     <color name="colorPrimaryDark">#272727</color>
     <color name="colorAccent">#53A245</color>
     <!-- end app general colors -->
 
-    <!-- start bottom nav colors -->
-    <color name="colorBottomMenuItem">#BDBDBD</color>
-    <!-- end bottom nav colors -->
+    <!-- start app color platte -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray1">#222222</color>
+    <color name="gray2">#272727</color>
+    <color name="gray3">#575757</color>
+    <color name="gray4">#BDBDBD</color>
+    <color name="green1">#53A245</color>
+    <!-- end app color platte -->
 
-    <!-- start splash activity colors -->
-    <color name="colorSplashText">#BDBDBD</color>
-    <!-- end splash activity colors -->
 </resources>
