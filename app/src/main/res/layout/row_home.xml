@@ -3,43 +3,60 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="8dp"
     android:background="@color/gray1">
 
     <TextView
+        android:id="@+id/tv_row_home_topic_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
         android:text="saü sözlüğün arkaplanı"
         android:textColor="@color/gray4"
-        android:textSize="20sp"/>
+        android:textSize="25sp"
+        fontPath="fonts/source_sans_pro/SourceSansPro-Bold.ttf"
+        tools:ignore="MissingPrefix"/>
 
     <TextView
+        android:id="@+id/tv_row_home_topic_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="#809"
         android:textColor="@color/gray3"
-        android:textSize="10sp"/>
+        android:textSize="13sp"
+        fontPath="fonts/source_sans_pro/SourceSansPro-Light.ttf"
+        tools:ignore="MissingPrefix"/>
 
     <TextView
+        android:id="@+id/tv_row_home_entry_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:text="facebookdaymışsın gibi hissettin cınım"
         android:textColor="@color/gray4"
-        android:textSize="10sp"/>
+        android:textSize="15sp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp">
 
         <TextView
+            android:id="@+id/tv_row_home_entry_created_at"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:text="20.07.2017 16:54"
             android:textColor="@color/gray3"
-            android:textSize="10sp"/>
+            android:textSize="13sp"
+            fontPath="fonts/source_sans_pro/SourceSansPro-Light.ttf"
+            tools:ignore="MissingPrefix"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -67,11 +84,14 @@
                 android:src="@drawable/downvote"/>
 
             <TextView
+                android:id="@+id/tv_row_home_user_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="kırmızı şortli"
                 android:textColor="@color/green1"
-                android:textSize="15sp"/>
+                android:textSize="15sp"
+                fontPath="fonts/source_sans_pro/SourceSansPro-SemiBold.ttf"
+                tools:ignore="MissingPrefix"/>
 
         </LinearLayout>
     </RelativeLayout>

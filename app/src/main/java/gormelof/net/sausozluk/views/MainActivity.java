@@ -4,6 +4,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.MenuItem;
 
@@ -22,51 +25,41 @@ public class MainActivity extends BaseActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName().toUpperCase();
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    return true;
-                case R.id.navigation_discover:
-                    return true;
-                case R.id.navigation_search:
-                    return true;
-                case R.id.navigation_account:
-                    return true;
-            }
-            return false;
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        BottomNavigationViewHelper.disableShiftMode(navigation);
-
-        ApiService apiService = ServiceGenerator.createService(ApiService.class);
-        Call<ApiResponse<TopicResponse>> topicResponseCall = apiService.getTopics("20");
-        topicResponseCall.enqueue(new Callback<ApiResponse<TopicResponse>>() {
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onResponse(Call<ApiResponse<TopicResponse>> call, Response<ApiResponse<TopicResponse>> response) {
-                if (response.isSuccessful()) {
-                    Log.i(TAG, "SUCCESS!");
-                    Log.i(TAG, Boolean.toString(response.body().isSuccess()));
-                    Log.i(TAG, Integer.toString(response.body().getData().getEntriesCount()));
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Fragment selectedFragment = null;
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        selectedFragment = HomeFragment.newInstance();
+                        return true;
+                    case R.id.navigation_discover:
+                        selectedFragment = HomeFragment.newInstance();
+                        return true;
+                    case R.id.navigation_search:
+                        selectedFragment = HomeFragment.newInstance();
+                        return true;
+                    case R.id.navigation_account:
+                        selectedFragment = HomeFragment.newInstance();
+                        return true;
                 }
-            }
-
-            @Override
-            public void onFailure(Call<ApiResponse<TopicResponse>> call, Throwable t) {
-                Log.e(TAG, t.getMessage());
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fl_activity_main_fragment_container, selectedFragment);
+                transaction.commit();
+                return true;
             }
         });
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fl_activity_main_fragment_container, HomeFragment.newInstance());
+        transaction.commit();
     }
 
     @Override

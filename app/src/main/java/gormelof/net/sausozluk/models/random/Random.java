@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import gormelof.net.sausozluk.models.entry.Entry;
 import gormelof.net.sausozluk.models.topics.Topic;
 
-public class RandomResponse {
+public class Random {
 
     @SerializedName("entry")
     @Expose
