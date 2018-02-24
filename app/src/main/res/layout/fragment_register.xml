@@ -1,13 +1,164 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="gormelof.net.sausozluk.views.entrypoint.RegisterFragment">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray2"
+    android:isScrollContainer="true"
+    android:scrollbars="none"
+    tools:context="gormelof.net.sausozluk.views.entrypoint.RegisterFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/tv_fragment_register_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textSize="50sp"
+            android:textColor="@color/gray4"
+            fontPath="fonts/baloo/Baloo-Regular.ttf"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="kayıt ol"
+            android:textSize="25sp"
+            android:textColor="@color/gray4"
+            fontPath="fonts/source_sans_pro/SourceSansPro-SemiBold.ttf"
+            tools:ignore="MissingPrefix"/>
+
+        <LinearLayout
+            android:id="@+id/ll_fragment_register_form_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="nick:"
+                android:textSize="15sp"
+                android:textColor="@color/gray4"/>
+
+            <EditText
+                android:id="@+id/et_fragment_register_nick"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/bg_login_input"
+                android:ems="10"
+                android:hint="nick"
+                android:textColorHint="@color/gray3"
+                android:textSize="15sp"
+                android:inputType="textEmailAddress"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="e-posta:"
+                android:textSize="15sp"
+                android:textColor="@color/gray4"/>
+
+            <EditText
+                android:id="@+id/et_fragment_register_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/bg_login_input"
+                android:ems="10"
+                android:hint="e-posta"
+                android:textColorHint="@color/gray3"
+                android:textSize="15sp"
+                android:inputType="textEmailAddress"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="parola:"
+                android:textSize="15sp"
+                android:textColor="@color/gray4"/>
+
+            <EditText
+                android:id="@+id/et_fragment_register_password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/bg_login_input"
+                android:ems="10"
+                android:hint="parola"
+                android:textColorHint="@color/gray3"
+                android:textSize="15sp"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btn_fragment_register_register"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:text="ben hazırım"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:background="@drawable/bg_login_button"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="hesabım var "
+                    android:textSize="15sp"
+                    android:textColor="@color/gray4"/>
+
+                <TextView
+                    android:id="@+id/tv_fragment_register_go_login_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="giriş"
+                    android:textSize="16sp"
+                    android:textColor="@color/green1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" sayfasına dön "
+                    android:textSize="15sp"
+                    android:textColor="@color/gray4"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
