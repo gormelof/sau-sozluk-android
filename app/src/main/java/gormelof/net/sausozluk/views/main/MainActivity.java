@@ -1,24 +1,16 @@
-package gormelof.net.sausozluk.views;
+package gormelof.net.sausozluk.views.main;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.MenuItem;
 
 import gormelof.net.sausozluk.R;
 import gormelof.net.sausozluk.helpers.BottomNavigationViewHelper;
-import gormelof.net.sausozluk.models.ApiResponse;
-import gormelof.net.sausozluk.models.topics.TopicResponse;
-import gormelof.net.sausozluk.networking.ApiService;
-import gormelof.net.sausozluk.networking.ServiceGenerator;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import gormelof.net.sausozluk.views.base.BaseActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends BaseActivity {

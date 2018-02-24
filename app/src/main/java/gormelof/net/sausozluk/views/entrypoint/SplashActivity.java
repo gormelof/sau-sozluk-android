@@ -1,12 +1,13 @@
-package gormelof.net.sausozluk.views;
+package gormelof.net.sausozluk.views.entrypoint;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import gormelof.net.sausozluk.R;
+import gormelof.net.sausozluk.views.base.BaseActivity;
+import gormelof.net.sausozluk.views.main.MainActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SplashActivity extends BaseActivity {
@@ -23,7 +24,7 @@ public class SplashActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent mainIntent = new Intent(SplashActivity.this, EntryPointActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
                 SplashActivity.this.finish();
             }
