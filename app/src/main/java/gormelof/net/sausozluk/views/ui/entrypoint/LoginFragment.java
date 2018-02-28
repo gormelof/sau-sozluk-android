@@ -1,8 +1,10 @@
-package gormelof.net.sausozluk.views.entrypoint;
+package gormelof.net.sausozluk.views.ui.entrypoint;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -14,12 +16,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import gormelof.net.sausozluk.R;
+import gormelof.net.sausozluk.UserSession;
 import gormelof.net.sausozluk.models.ApiResponse;
 import gormelof.net.sausozluk.models.Credentials;
 import gormelof.net.sausozluk.models.LoginResponse;
 import gormelof.net.sausozluk.networking.ApiService;
 import gormelof.net.sausozluk.networking.ServiceGenerator;
-import gormelof.net.sausozluk.views.main.MainActivity;
+import gormelof.net.sausozluk.views.ui.main.MainActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,9 +31,7 @@ public class LoginFragment extends Fragment {
 
     private final static String TAG = LoginFragment.class.getSimpleName().toUpperCase();
 
-    public LoginFragment() {
-        // Required empty public constructor
-    }
+    public LoginFragment() {}
 
     public static LoginFragment newInstance() {
         LoginFragment fragment = new LoginFragment();
@@ -107,9 +108,21 @@ public class LoginFragment extends Fragment {
                 if (response.isSuccessful()) {
                     Log.i(TAG, "SUCCESS");
                     progress.dismiss();
-                    // TODO: BURADA KALDIK BİLGİLER SHARED PREF ILE KAYDEDİLECEK 
+
+                    String user_id = response.body().getData().getUser_id();
+                    String email = response.body().getData().getEmail();
+                    String username = response.body().getData().getUsername();
+                    String token = response.body().getData().getToken();
+
+                    UserSession userSession = new UserSession(getContext());
+
+                    userSession.createUserSession(user_id, email, username, token);
+
                     Intent intent = new Intent(getContext(), MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    getActivity().finish();
                 }
             }
 

@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.views.main;
+package gormelof.net.sausozluk.views.ui.main;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

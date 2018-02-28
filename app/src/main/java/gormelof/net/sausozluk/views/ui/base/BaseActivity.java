@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.views.base;
+package gormelof.net.sausozluk.views.ui.base;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

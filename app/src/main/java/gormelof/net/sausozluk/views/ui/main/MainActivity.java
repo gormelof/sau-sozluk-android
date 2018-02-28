@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.views.main;
+package gormelof.net.sausozluk.views.ui.main;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import gormelof.net.sausozluk.R;
 import gormelof.net.sausozluk.helpers.BottomNavigationViewHelper;
-import gormelof.net.sausozluk.views.base.BaseActivity;
+import gormelof.net.sausozluk.views.ui.base.BaseActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends BaseActivity {

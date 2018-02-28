@@ -1,12 +1,11 @@
-package gormelof.net.sausozluk.views.entrypoint;
+package gormelof.net.sausozluk.views.ui.entrypoint;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 
 import gormelof.net.sausozluk.R;
-import gormelof.net.sausozluk.views.base.BaseActivity;
-import gormelof.net.sausozluk.views.main.HomeFragment;
+import gormelof.net.sausozluk.views.ui.base.BaseActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class EntryPointActivity extends BaseActivity {
@@ -19,11 +18,11 @@ public class EntryPointActivity extends BaseActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fl_activity_entry_point_fragment_container, LoginFragment.newInstance());
         transaction.commit();
-
     }
 
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+
 }

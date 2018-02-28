@@ -1,13 +1,15 @@
-package gormelof.net.sausozluk.views.entrypoint;
+package gormelof.net.sausozluk.views.ui.entrypoint;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
 
 import gormelof.net.sausozluk.R;
-import gormelof.net.sausozluk.views.base.BaseActivity;
-import gormelof.net.sausozluk.views.main.MainActivity;
+import gormelof.net.sausozluk.UserSession;
+import gormelof.net.sausozluk.views.ui.base.BaseActivity;
+import gormelof.net.sausozluk.views.ui.main.MainActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SplashActivity extends BaseActivity {
@@ -24,9 +26,20 @@ public class SplashActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                UserSession userSession = new UserSession(getApplicationContext());
+                Intent intent = new Intent(SplashActivity.this, EntryPointActivity.class);
+                if (userSession.isUserLoggedIn()) {
+                    intent = new Intent(SplashActivity.this, MainActivity.class);
+                }
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                SplashActivity.this.startActivity(intent);
+                SplashActivity.this.finish();
+                /*
                 Intent mainIntent = new Intent(SplashActivity.this, EntryPointActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
-                SplashActivity.this.finish();
+
+                */
             }
         }, SPLASH_DISPLAY_LENGTH);
     }

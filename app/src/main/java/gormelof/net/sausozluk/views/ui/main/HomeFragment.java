@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.views.main;
+package gormelof.net.sausozluk.views.ui.main;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import gormelof.net.sausozluk.R;
-import gormelof.net.sausozluk.adapters.HomeAdapter;
+import gormelof.net.sausozluk.views.adapters.HomeAdapter;
 import gormelof.net.sausozluk.helpers.SeparatorDecoration;
 import gormelof.net.sausozluk.models.ApiResponse;
 import gormelof.net.sausozluk.models.random.Random;
