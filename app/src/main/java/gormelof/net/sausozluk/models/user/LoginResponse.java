@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.models;
+package gormelof.net.sausozluk.models.user;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

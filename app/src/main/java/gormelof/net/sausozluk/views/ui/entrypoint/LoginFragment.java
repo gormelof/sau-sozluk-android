@@ -2,9 +2,7 @@ package gormelof.net.sausozluk.views.ui.entrypoint;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
@@ -18,8 +16,8 @@ import android.widget.TextView;
 import gormelof.net.sausozluk.R;
 import gormelof.net.sausozluk.UserSession;
 import gormelof.net.sausozluk.models.ApiResponse;
-import gormelof.net.sausozluk.models.Credentials;
-import gormelof.net.sausozluk.models.LoginResponse;
+import gormelof.net.sausozluk.models.user.LoginRequestBody;
+import gormelof.net.sausozluk.models.user.LoginResponse;
 import gormelof.net.sausozluk.networking.ApiService;
 import gormelof.net.sausozluk.networking.ServiceGenerator;
 import gormelof.net.sausozluk.views.ui.main.MainActivity;
@@ -90,7 +88,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void login(String email, String password) {
-        Credentials credentials = new Credentials(email, password);
+        LoginRequestBody loginRequestBody = new LoginRequestBody(email, password);
 
         final ProgressDialog progress = new ProgressDialog(getContext());
         progress.setMessage("Giriş Yapılıyor...");
@@ -100,7 +98,7 @@ public class LoginFragment extends Fragment {
         progress.show();
 
         ApiService apiService = ServiceGenerator.createService(ApiService.class);
-        Call<ApiResponse<LoginResponse>> loginCall = apiService.login(credentials);
+        Call<ApiResponse<LoginResponse>> loginCall = apiService.login(loginRequestBody);
 
         loginCall.enqueue(new Callback<ApiResponse<LoginResponse>>() {
             @Override
