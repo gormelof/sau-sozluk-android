@@ -1,0 +1,115 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/gray1"
+    tools:context=".views.ui.main.ProfileFragment">
+
+    <TextView
+        android:id="@+id/tv_fragment_profile_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="captain price"
+        android:textColor="@color/gray4"
+        android:textSize="30sp"
+        fontPath="fonts/source_sans_pro/SourceSansPro-Bold.ttf"
+        tools:ignore="HardcodedText,MissingPrefix"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/tv_fragment_profile_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:background="@color/yellow1"
+            android:text="yazar"
+            android:textColor="@color/gray5"
+            android:textSize="15sp"
+            fontPath="fonts/source_sans_pro/SourceSansPro-Regular.ttf"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:id="@+id/tv_fragment_profile_generation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:layout_marginStart="2.5dp"
+            android:background="@color/gray6"
+            android:text="1.nesil"
+            android:textColor="@color/gray7"
+            android:textSize="15sp"
+            fontPath="fonts/source_sans_pro/SourceSansPro-Regular.ttf"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:id="@+id/tv_fragment_profile_entry_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:layout_marginStart="2.5dp"
+            android:background="@color/green1"
+            android:text="40 entry"
+            android:textColor="@color/gray5"
+            android:textSize="15sp"
+            fontPath="fonts/source_sans_pro/SourceSansPro-Regular.ttf"
+            tools:ignore="MissingPrefix"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:background="@color/gray5"
+        android:text="parola değiştir"
+        android:textColor="@color/green1"
+        android:textSize="15sp"
+        fontPath="fonts/source_sans_pro/SourceSansPro-Regular.ttf"
+        tools:ignore="MissingPrefix"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:padding="5dp"
+        android:background="@color/gray5"
+        android:text="e-posta değiştir"
+        android:textColor="@color/green1"
+        android:textSize="15sp"
+        fontPath="fonts/source_sans_pro/SourceSansPro-Regular.ttf"
+        tools:ignore="MissingPrefix"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:padding="5dp"
+        android:background="@color/gray5"
+        android:text="çıkış yap"
+        android:textColor="@color/green1"
+        android:textSize="15sp"
+        fontPath="fonts/source_sans_pro/SourceSansPro-Regular.ttf"
+        tools:ignore="MissingPrefix"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:padding="5dp"
+        android:background="@color/gray5"
+        android:text="tüm oturumları kapat"
+        android:textColor="@color/green1"
+        android:textSize="15sp"
+        fontPath="fonts/source_sans_pro/SourceSansPro-Regular.ttf"
+        tools:ignore="MissingPrefix"/>
+
+</LinearLayout>

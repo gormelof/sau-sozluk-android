@@ -31,16 +31,16 @@ public class MainActivity extends BaseActivity {
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
                         selectedFragment = HomeFragment.newInstance();
-                        return true;
+                        break;
                     case R.id.navigation_discover:
                         selectedFragment = HomeFragment.newInstance();
-                        return true;
+                        break;
                     case R.id.navigation_search:
                         selectedFragment = HomeFragment.newInstance();
-                        return true;
-                    case R.id.navigation_account:
-                        selectedFragment = HomeFragment.newInstance();
-                        return true;
+                        break;
+                    case R.id.navigation_profile:
+                        selectedFragment = ProfileFragment.newInstance();
+                        break;
                 }
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.fl_activity_main_fragment_container, selectedFragment);

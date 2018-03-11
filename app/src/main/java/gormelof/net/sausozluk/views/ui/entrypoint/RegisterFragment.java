@@ -1,6 +1,7 @@
 package gormelof.net.sausozluk.views.ui.entrypoint;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import gormelof.net.sausozluk.R;
 import gormelof.net.sausozluk.models.ApiResponse;
@@ -92,9 +94,15 @@ public class RegisterFragment extends Fragment {
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
                 if (response.isSuccessful()) {
                     if (response.body().isSuccess()) {
-                        // go login
+                        CharSequence successMessage = "Kayıt Başarılı!";
+                        Toast.makeText(getContext(), successMessage, Toast.LENGTH_LONG).show();
+
+                        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fl_activity_entry_point_fragment_container, LoginFragment.newInstance());
+                        transaction.commit();
                     } else {
-                        // show error message
+                        CharSequence errorMessage = response.body().getMessage();
+                        Toast.makeText(getContext(), errorMessage, Toast.LENGTH_LONG).show();
                     }
                 }
             }

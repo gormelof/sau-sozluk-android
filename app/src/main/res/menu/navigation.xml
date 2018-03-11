@@ -18,7 +18,7 @@
         android:title="ara"/>
 
     <item
-        android:id="@+id/navigation_account"
+        android:id="@+id/navigation_profile"
         android:icon="@drawable/ic_account"
         android:title="profil"/>
 

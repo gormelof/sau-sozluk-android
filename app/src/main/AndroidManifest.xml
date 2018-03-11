@@ -27,6 +27,8 @@
             android:name=".views.ui.entrypoint.EntryPointActivity"
             android:windowSoftInputMode="stateVisible|adjustResize">
         </activity>
+        <activity android:name=".views.ui.profile.ProfileActivity">
+        </activity>
     </application>
 
 </manifest>
