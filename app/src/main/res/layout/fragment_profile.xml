@@ -65,6 +65,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_fragment_profile_change_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -77,6 +78,7 @@
         tools:ignore="MissingPrefix"/>
 
     <TextView
+        android:id="@+id/tv_fragment_profile_change_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
@@ -89,6 +91,7 @@
         tools:ignore="MissingPrefix"/>
 
     <TextView
+        android:id="@+id/tv_fragment_profile_destroy_session"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
@@ -101,6 +104,7 @@
         tools:ignore="MissingPrefix"/>
 
     <TextView
+        android:id="@+id/tv_fragment_profile_destroy_all_sessions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="1dp"

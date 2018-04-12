@@ -18,24 +18,24 @@
 
         <TextView
             android:id="@+id/tv_fragment_login_app_name"
+            fontPath="fonts/baloo/Baloo-Regular.ttf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/app_name"
-            android:textSize="50sp"
             android:textColor="@color/gray4"
-            fontPath="fonts/baloo/Baloo-Regular.ttf"
+            android:textSize="50sp"
             tools:ignore="MissingPrefix"/>
 
         <TextView
+            fontPath="fonts/source_sans_pro/SourceSansPro-SemiBold.ttf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:text="giriş yap"
-            android:textSize="25sp"
             android:textColor="@color/gray4"
-            fontPath="fonts/source_sans_pro/SourceSansPro-SemiBold.ttf"
+            android:textSize="25sp"
             tools:ignore="MissingPrefix"/>
 
         <LinearLayout
@@ -49,59 +49,59 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="e-posta:"
-                android:textSize="15sp"
-                android:textColor="@color/gray4"/>
+                android:textColor="@color/gray4"
+                android:textSize="15sp"/>
 
             <EditText
                 android:id="@+id/et_fragment_login_email"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="3dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
                 android:background="@drawable/bg_login_input"
                 android:ems="10"
                 android:hint="e-posta"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
                 android:textColorHint="@color/gray3"
-                android:textSize="15sp"
-                android:inputType="textEmailAddress"/>
+                android:textSize="15sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="parola:"
-                android:textSize="15sp"
-                android:textColor="@color/gray4"/>
+                android:textColor="@color/gray4"
+                android:textSize="15sp"/>
 
             <EditText
                 android:id="@+id/et_fragment_login_password"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="3dp"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
                 android:background="@drawable/bg_login_input"
                 android:ems="10"
                 android:hint="parola"
+                android:inputType="textPassword"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
                 android:textColorHint="@color/gray3"
-                android:textSize="15sp"
-                android:inputType="textPassword"/>
+                android:textSize="15sp"/>
 
             <Button
                 android:id="@+id/btn_fragment_login_login"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="15dp"
+                android:background="@drawable/bg_login_button"
                 android:text="yürü be!"
-                android:textColor="@color/white"
-                android:textSize="15sp"
                 android:textAllCaps="false"
-                android:background="@drawable/bg_login_button"/>
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -113,31 +113,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ya "
-                    android:textSize="15sp"
-                    android:textColor="@color/gray4"/>
+                    android:textColor="@color/gray4"
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:id="@+id/tv_fragment_login_go_register_page"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="kayıt olun"
-                    android:textSize="16sp"
-                    android:textColor="@color/green1"/>
+                    android:textColor="@color/green1"
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" ya da "
-                    android:textSize="15sp"
-                    android:textColor="@color/gray4"/>
+                    android:textColor="@color/gray4"
+                    android:textSize="15sp"/>
 
                 <TextView
                     android:id="@+id/tv_fragment_login_go_forgot_password_page"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="şifrenizi unutun"
-                    android:textSize="16sp"
-                    android:textColor="@color/green1"/>
+                    android:textColor="@color/green1"
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
