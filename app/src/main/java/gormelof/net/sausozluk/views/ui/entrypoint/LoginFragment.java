@@ -91,7 +91,7 @@ public class LoginFragment extends Fragment {
         LoginRequest loginRequest = new LoginRequest(email, password);
 
         final ProgressDialog progress = new ProgressDialog(getContext());
-        progress.setMessage("Giriş Yapılıyor...");
+        progress.setMessage("giriş yapılıyor...");
         progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progress.setIndeterminate(true);
         progress.setCancelable(true);
@@ -110,11 +110,12 @@ public class LoginFragment extends Fragment {
                     String user_id = response.body().getData().getUserId();
                     String email = response.body().getData().getEmail();
                     String username = response.body().getData().getUsername();
+                    String usernameSlug = response.body().getData().getSlug();
                     String token = response.body().getData().getToken();
 
                     UserSession userSession = new UserSession(getContext());
 
-                    userSession.createUserSession(user_id, email, username, token);
+                    userSession.createUserSession(user_id, email, username, usernameSlug, token);
 
                     Intent intent = new Intent(getContext(), MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

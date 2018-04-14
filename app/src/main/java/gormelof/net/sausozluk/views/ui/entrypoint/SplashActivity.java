@@ -1,6 +1,5 @@
 package gormelof.net.sausozluk.views.ui.entrypoint;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
@@ -38,7 +37,6 @@ public class SplashActivity extends BaseActivity {
                 /*
                 Intent mainIntent = new Intent(SplashActivity.this, EntryPointActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
-
                 */
             }
         }, SPLASH_DISPLAY_LENGTH);

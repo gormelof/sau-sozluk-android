@@ -27,6 +27,8 @@ public class UserSession {
 
     public static final String KEY_USERNAME = "username";
 
+    public static final String KEY_USERNAME_SLUG = "usernameSlug";
+
     public static final String KEY_TOKEN = "token";
 
     public UserSession(Context context) {
@@ -35,11 +37,12 @@ public class UserSession {
         mEditor = mSharedPreferences.edit();
     }
 
-    public void createUserSession(String userId, String email, String username, String token) {
+    public void createUserSession(String userId, String email, String username, String usernameSlug, String token) {
         mEditor.putBoolean(IS_USER_LOGIN, true);
         mEditor.putString(KEY_USER_ID, userId);
         mEditor.putString(KEY_EMAIL, email);
         mEditor.putString(KEY_USERNAME, username);
+        mEditor.putString(KEY_USERNAME_SLUG, usernameSlug);
         mEditor.putString(KEY_TOKEN, token);
         mEditor.commit();
     }
@@ -50,25 +53,23 @@ public class UserSession {
         user.put(KEY_USER_ID, mSharedPreferences.getString(KEY_USER_ID, null));
         user.put(KEY_EMAIL, mSharedPreferences.getString(KEY_EMAIL, null));
         user.put(KEY_USERNAME, mSharedPreferences.getString(KEY_USERNAME, null));
+        user.put(KEY_USERNAME_SLUG, mSharedPreferences.getString(KEY_USERNAME_SLUG, null));
         user.put(KEY_TOKEN, mSharedPreferences.getString(KEY_TOKEN, null));
 
         return user;
     }
 
-    public void logoutUser() {
+    public String getToken() {
+        return mSharedPreferences.getString(KEY_TOKEN, null);
+    }
+
+    public void clearUserData() {
         mEditor.clear();
         mEditor.commit();
-
-        Intent intent = new Intent(mContext, EntryPointActivity.class);
-
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        mContext.startActivity(intent);
     }
 
     public boolean isUserLoggedIn() {
         return mSharedPreferences.getBoolean(IS_USER_LOGIN, false);
     }
+
 }
