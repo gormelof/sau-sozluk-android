@@ -14,17 +14,17 @@ import java.util.Date;
 import java.util.List;
 
 import gormelof.net.sausozluk.R;
-import gormelof.net.sausozluk.models.random.Random;
+import gormelof.net.sausozluk.entities.response.random.RandomResponse;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> {
 
     private static final String TAG_ADAPTER = HomeAdapter.class.getSimpleName().toUpperCase();
 
-    private List<Random> mRandomList;
+    private List<RandomResponse> mRandomList;
     private LayoutInflater mLayoutInflater;
     private Context mContext;
 
-    public HomeAdapter(Context context, List<Random> entryList) {
+    public HomeAdapter(Context context, List<RandomResponse> entryList) {
         mRandomList = entryList;
         mContext = context;
         mLayoutInflater = LayoutInflater.from(mContext);
@@ -38,7 +38,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
 
     @Override
     public void onBindViewHolder(HomeViewHolder holder, int position) {
-        Random random = mRandomList.get(position);
+        RandomResponse random = mRandomList.get(position);
 
         holder.mTvTopicTitle.setText(random.getTopic().getTitle());
         holder.mTvTopicId.setText("#" + random.getTopic().getId());

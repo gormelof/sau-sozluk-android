@@ -1,37 +1,44 @@
-package gormelof.net.sausozluk.models.user;
+package gormelof.net.sausozluk.entities.response.auth;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginResponse {
+
     @SerializedName("user_id")
     @Expose
-    private String user_id;
+    private String userId;
+
     @SerializedName("token")
     @Expose
     private String token;
+
     @SerializedName("email")
     @Expose
     private String email;
+
     @SerializedName("username")
     @Expose
     private String username;
+
     @SerializedName("slug")
     @Expose
     private String slug;
+
     @SerializedName("authority")
     @Expose
-    private String authority;
+    private Integer authority;
+
     @SerializedName("unread")
     @Expose
-    private String unread;
+    private Integer unread;
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getToken() {
@@ -66,19 +73,20 @@ public class LoginResponse {
         this.slug = slug;
     }
 
-    public String getAuthority() {
+    public Integer getAuthority() {
         return authority;
     }
 
-    public void setAuthority(String authority) {
+    public void setAuthority(Integer authority) {
         this.authority = authority;
     }
 
-    public String getUnread() {
+    public Integer getUnread() {
         return unread;
     }
 
-    public void setUnread(String unread) {
+    public void setUnread(Integer unread) {
         this.unread = unread;
     }
+
 }

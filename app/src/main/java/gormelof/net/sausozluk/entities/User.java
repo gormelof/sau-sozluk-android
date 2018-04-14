@@ -1,5 +1,4 @@
-
-package gormelof.net.sausozluk.models.user;
+package gormelof.net.sausozluk.entities;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -9,9 +8,11 @@ public class User {
     @SerializedName("id")
     @Expose
     private String id;
+
     @SerializedName("slug")
     @Expose
     private String slug;
+
     @SerializedName("username")
     @Expose
     private String username;

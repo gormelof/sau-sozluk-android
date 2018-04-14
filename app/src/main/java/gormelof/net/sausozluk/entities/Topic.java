@@ -1,5 +1,4 @@
-
-package gormelof.net.sausozluk.models.topics;
+package gormelof.net.sausozluk.entities;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -9,21 +8,27 @@ public class Topic {
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("slug")
     @Expose
     private String slug;
+
     @SerializedName("title")
     @Expose
     private String title;
+
     @SerializedName("count")
     @Expose
     private Integer count;
+
     @SerializedName("updated_at")
     @Expose
     private String updatedAt;
+
     @SerializedName("created_at")
     @Expose
     private String createdAt;
+
     @SerializedName("page")
     @Expose
     private Integer page;

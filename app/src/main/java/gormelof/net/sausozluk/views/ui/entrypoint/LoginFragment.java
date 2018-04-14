@@ -15,11 +15,11 @@ import android.widget.TextView;
 
 import gormelof.net.sausozluk.R;
 import gormelof.net.sausozluk.UserSession;
-import gormelof.net.sausozluk.models.ApiResponse;
-import gormelof.net.sausozluk.models.user.LoginRequestBody;
-import gormelof.net.sausozluk.models.user.LoginResponse;
-import gormelof.net.sausozluk.networking.ApiService;
-import gormelof.net.sausozluk.networking.ServiceGenerator;
+import gormelof.net.sausozluk.api.ApiService;
+import gormelof.net.sausozluk.api.ServiceGenerator;
+import gormelof.net.sausozluk.entities.request.LoginRequest;
+import gormelof.net.sausozluk.entities.response.api.ApiResponse;
+import gormelof.net.sausozluk.entities.response.auth.LoginResponse;
 import gormelof.net.sausozluk.views.ui.main.MainActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -88,7 +88,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void login(String email, String password) {
-        LoginRequestBody loginRequestBody = new LoginRequestBody(email, password);
+        LoginRequest loginRequest = new LoginRequest(email, password);
 
         final ProgressDialog progress = new ProgressDialog(getContext());
         progress.setMessage("Giriş Yapılıyor...");
@@ -98,7 +98,7 @@ public class LoginFragment extends Fragment {
         progress.show();
 
         ApiService apiService = ServiceGenerator.createService(ApiService.class);
-        Call<ApiResponse<LoginResponse>> loginCall = apiService.login(loginRequestBody);
+        Call<ApiResponse<LoginResponse>> loginCall = apiService.login(loginRequest);
 
         loginCall.enqueue(new Callback<ApiResponse<LoginResponse>>() {
             @Override
@@ -107,7 +107,7 @@ public class LoginFragment extends Fragment {
                     Log.i(TAG, "SUCCESS");
                     progress.dismiss();
 
-                    String user_id = response.body().getData().getUser_id();
+                    String user_id = response.body().getData().getUserId();
                     String email = response.body().getData().getEmail();
                     String username = response.body().getData().getUsername();
                     String token = response.body().getData().getToken();

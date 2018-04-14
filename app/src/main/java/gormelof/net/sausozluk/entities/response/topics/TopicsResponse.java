@@ -1,21 +1,25 @@
+package gormelof.net.sausozluk.entities.response.topics;
 
-package gormelof.net.sausozluk.models.topics;
-
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class TopicResponse {
+import java.util.List;
+
+import gormelof.net.sausozluk.entities.Topic;
+
+public class TopicsResponse {
 
     @SerializedName("entries_count")
     @Expose
     private Integer entriesCount;
+
     @SerializedName("topics")
     @Expose
     private List<Topic> topics = null;
+
     @SerializedName("topics_count")
     @Expose
-    private Integer topicsCount;
+    private String topicsCount;
 
     public Integer getEntriesCount() {
         return entriesCount;
@@ -33,12 +37,13 @@ public class TopicResponse {
         this.topics = topics;
     }
 
-    public Integer getTopicsCount() {
+    public String getTopicsCount() {
         return topicsCount;
     }
 
-    public void setTopicsCount(Integer topicsCount) {
+    public void setTopicsCount(String topicsCount) {
         this.topicsCount = topicsCount;
     }
 
 }
+

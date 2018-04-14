@@ -1,10 +1,7 @@
-
-package gormelof.net.sausozluk.models.entry;
+package gormelof.net.sausozluk.entities;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import gormelof.net.sausozluk.models.user.User;
 
 public class Entry {
 

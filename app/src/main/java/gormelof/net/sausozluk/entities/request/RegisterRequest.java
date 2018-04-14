@@ -1,13 +1,15 @@
-package gormelof.net.sausozluk.models.user;
+package gormelof.net.sausozluk.entities.request;
 
-public class RegisterRequestBody {
+public class RegisterRequest {
+
     private String nick;
     private String email;
     private String password;
 
-    public RegisterRequestBody(String nick, String email, String password) {
+    public RegisterRequest(String nick, String email, String password) {
         this.nick = nick;
         this.email = email;
         this.password = password;
     }
+
 }

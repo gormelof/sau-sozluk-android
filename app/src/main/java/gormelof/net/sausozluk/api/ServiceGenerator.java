@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.networking;
+package gormelof.net.sausozluk.api;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

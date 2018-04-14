@@ -1,7 +1,6 @@
 package gormelof.net.sausozluk.views.ui.entrypoint;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -14,10 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import gormelof.net.sausozluk.R;
-import gormelof.net.sausozluk.models.ApiResponse;
-import gormelof.net.sausozluk.models.user.RegisterRequestBody;
-import gormelof.net.sausozluk.networking.ApiService;
-import gormelof.net.sausozluk.networking.ServiceGenerator;
+import gormelof.net.sausozluk.entities.request.RegisterRequest;
+import gormelof.net.sausozluk.entities.response.api.ApiResponse;
+import gormelof.net.sausozluk.api.ApiService;
+import gormelof.net.sausozluk.api.ServiceGenerator;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -77,7 +76,7 @@ public class RegisterFragment extends Fragment {
     }
 
     private void register(String nick, String email, String password) {
-        RegisterRequestBody registerRequestBody = new RegisterRequestBody(nick, email, password);
+        RegisterRequest registerRequest = new RegisterRequest(nick, email, password);
 
         final ProgressDialog progress = new ProgressDialog(getContext());
         progress.setMessage("Kayıt Yapılıyor...");
@@ -87,7 +86,7 @@ public class RegisterFragment extends Fragment {
         progress.show();
 
         ApiService apiService = ServiceGenerator.createService(ApiService.class);
-        Call<ApiResponse> registerCall = apiService.register(registerRequestBody);
+        Call<ApiResponse> registerCall = apiService.register(registerRequest);
 
         registerCall.enqueue(new Callback<ApiResponse>() {
             @Override

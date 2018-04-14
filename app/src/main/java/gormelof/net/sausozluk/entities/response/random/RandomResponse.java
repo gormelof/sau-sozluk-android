@@ -1,17 +1,17 @@
-
-package gormelof.net.sausozluk.models.random;
+package gormelof.net.sausozluk.entities.response.random;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import gormelof.net.sausozluk.models.entry.Entry;
-import gormelof.net.sausozluk.models.topics.Topic;
+import gormelof.net.sausozluk.entities.Entry;
+import gormelof.net.sausozluk.entities.Topic;
 
-public class Random {
+public class RandomResponse {
 
     @SerializedName("entry")
     @Expose
     private Entry entry;
+
     @SerializedName("topic")
     @Expose
     private Topic topic;
@@ -33,3 +33,4 @@ public class Random {
     }
 
 }
+

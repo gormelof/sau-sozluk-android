@@ -13,12 +13,12 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import gormelof.net.sausozluk.R;
+import gormelof.net.sausozluk.entities.response.api.ApiResponse;
+import gormelof.net.sausozluk.entities.response.random.RandomResponse;
 import gormelof.net.sausozluk.views.adapters.HomeAdapter;
 import gormelof.net.sausozluk.helpers.SeparatorDecoration;
-import gormelof.net.sausozluk.models.ApiResponse;
-import gormelof.net.sausozluk.models.random.Random;
-import gormelof.net.sausozluk.networking.ApiService;
-import gormelof.net.sausozluk.networking.ServiceGenerator;
+import gormelof.net.sausozluk.api.ApiService;
+import gormelof.net.sausozluk.api.ServiceGenerator;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -44,10 +44,10 @@ public class HomeFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         ApiService apiService = ServiceGenerator.createService(ApiService.class);
-        Call<ApiResponse<List<Random>>> randomCall = apiService.getRandoms();
-        randomCall.enqueue(new Callback<ApiResponse<List<Random>>>() {
+        Call<ApiResponse<List<RandomResponse>>> randomCall = apiService.getRandom();
+        randomCall.enqueue(new Callback<ApiResponse<List<RandomResponse>>>() {
             @Override
-            public void onResponse(Call<ApiResponse<List<Random>>> call, Response<ApiResponse<List<Random>>> response) {
+            public void onResponse(Call<ApiResponse<List<RandomResponse>>> call, Response<ApiResponse<List<RandomResponse>>> response) {
                 if (response.isSuccessful()) {
                     Log.i(TAG, "SUCCESS!");
 
@@ -64,7 +64,7 @@ public class HomeFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<ApiResponse<List<Random>>> call, Throwable t) {
+            public void onFailure(Call<ApiResponse<List<RandomResponse>>> call, Throwable t) {
                 Log.e(TAG, t.getMessage());
             }
         });
