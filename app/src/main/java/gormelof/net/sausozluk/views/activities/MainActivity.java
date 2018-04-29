@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.views.ui.main;
+package gormelof.net.sausozluk.views.activities;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,7 +10,9 @@ import android.view.MenuItem;
 
 import gormelof.net.sausozluk.R;
 import gormelof.net.sausozluk.helpers.BottomNavigationViewHelper;
-import gormelof.net.sausozluk.views.ui.base.BaseActivity;
+import gormelof.net.sausozluk.views.fragments.ProfileFragment;
+import gormelof.net.sausozluk.views.fragments.RandomFragment;
+import gormelof.net.sausozluk.views.fragments.TopicsFragment;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends BaseActivity {
@@ -30,13 +32,13 @@ public class MainActivity extends BaseActivity {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-                        selectedFragment = HomeFragment.newInstance();
+                        selectedFragment = RandomFragment.newInstance();
                         break;
                     case R.id.navigation_discover:
-                        selectedFragment = HomeFragment.newInstance();
+                        selectedFragment = TopicsFragment.newInstance();
                         break;
                     case R.id.navigation_search:
-                        selectedFragment = HomeFragment.newInstance();
+                        selectedFragment = RandomFragment.newInstance();
                         break;
                     case R.id.navigation_profile:
                         selectedFragment = ProfileFragment.newInstance();
@@ -50,7 +52,7 @@ public class MainActivity extends BaseActivity {
         });
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.fl_activity_main_fragment_container, HomeFragment.newInstance());
+        transaction.replace(R.id.fl_activity_main_fragment_container, RandomFragment.newInstance());
         transaction.commit();
     }
 

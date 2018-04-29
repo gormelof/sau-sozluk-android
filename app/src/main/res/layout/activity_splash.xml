@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
-    tools:context=".views.ui.entrypoint.SplashActivity">
+    android:background="@color/white"
+    tools:context=".views.activities.SplashActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:text="saü sözlük"
         android:textSize="50sp"
-        android:textColor="@color/gray4"
+        android:textColor="@color/baseColor"
         fontPath="fonts/baloo/Baloo-Regular.ttf"
         tools:ignore="MissingPrefix"/>
 

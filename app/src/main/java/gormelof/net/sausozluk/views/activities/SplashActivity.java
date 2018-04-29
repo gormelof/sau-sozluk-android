@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.views.ui.entrypoint;
+package gormelof.net.sausozluk.views.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,8 +7,6 @@ import android.os.Bundle;
 
 import gormelof.net.sausozluk.R;
 import gormelof.net.sausozluk.UserSession;
-import gormelof.net.sausozluk.views.ui.base.BaseActivity;
-import gormelof.net.sausozluk.views.ui.main.MainActivity;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SplashActivity extends BaseActivity {

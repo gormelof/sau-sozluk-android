@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.views.ui.entrypoint;
+package gormelof.net.sausozluk.views.fragments;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;

@@ -12,22 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.ui.entrypoint.SplashActivity">
+        <activity android:name=".views.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".views.ui.base.BaseActivity">
+        <activity android:name=".views.activities.BaseActivity">
         </activity>
-        <activity android:name=".views.ui.main.MainActivity">
+        <activity android:name=".views.activities.MainActivity">
         </activity>
         <activity
-            android:name=".views.ui.entrypoint.EntryPointActivity"
+            android:name=".views.activities.EntryPointActivity"
             android:windowSoftInputMode="stateVisible|adjustResize">
         </activity>
-        <activity android:name=".views.ui.profile.ProfileActivity">
+        <activity android:name=".views.activities.EntriesActivity">
         </activity>
     </application>
 

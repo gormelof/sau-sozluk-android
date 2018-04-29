@@ -31,7 +31,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder
     }
     @Override
     public HomeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View homeRowView = mLayoutInflater.inflate(R.layout.row_home, parent, false);
+        View homeRowView = mLayoutInflater.inflate(R.layout.item_home, parent, false);
         HomeViewHolder homeViewHolder = new HomeViewHolder(homeRowView);
         return homeViewHolder;
     }

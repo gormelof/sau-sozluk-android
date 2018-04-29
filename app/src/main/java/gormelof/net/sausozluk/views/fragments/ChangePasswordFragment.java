@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.views.ui.preferences;
+package gormelof.net.sausozluk.views.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,14 +8,14 @@ import android.view.ViewGroup;
 
 import gormelof.net.sausozluk.R;
 
-public class ChangeEmailFragment extends Fragment {
+public class ChangePasswordFragment extends Fragment {
 
-    public ChangeEmailFragment() {
+    public ChangePasswordFragment() {
         // Required empty public constructor
     }
 
-    public static ChangeEmailFragment newInstance() {
-        ChangeEmailFragment fragment = new ChangeEmailFragment();
+    public static ChangePasswordFragment newInstance() {
+        ChangePasswordFragment fragment = new ChangePasswordFragment();
         return fragment;
     }
 
@@ -26,9 +26,9 @@ public class ChangeEmailFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View changeEmailView = inflater.inflate(R.layout.fragment_change_email, container, false);
+        final View changePasswordView = inflater.inflate(R.layout.fragment_change_password, container, false);
 
-        return changeEmailView;
+        return changePasswordView;
     }
 
 }

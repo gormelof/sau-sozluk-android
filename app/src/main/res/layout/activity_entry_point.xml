@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ui.entrypoint.EntryPointActivity">
+    tools:context=".views.activities.EntryPointActivity">
 
     <FrameLayout
         android:id="@+id/fl_activity_entry_point_fragment_container"

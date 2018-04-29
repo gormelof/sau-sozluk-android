@@ -2,14 +2,15 @@
 <resources>
 
     <!-- start app general colors -->
-    <color name="colorPrimary">#222222</color>
-    <color name="colorPrimaryDark">#272727</color>
-    <color name="colorAccent">#53A245</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#241B70</color>
+    <color name="colorAccent">#241B70</color>
     <!-- end app general colors -->
 
-    <!-- start app color platte -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+
+    <!-- start app color platte -->
     <color name="gray1">#222222</color>
     <color name="gray2">#272727</color>
     <color name="gray3">#575757</color>
@@ -20,5 +21,11 @@
     <color name="green1">#53A245</color>
     <color name="yellow1">#FFB96E</color>
     <!-- end app color platte -->
+
+    <!-- begin new colors -->
+    <color name="baseColor">#241B70</color>
+    <color name="toolbarGray">#C1C1C1</color>
+    <color name="listSeparatorGray">#C1C1C1C1</color>
+    <!-- end new colors -->
 
 </resources>

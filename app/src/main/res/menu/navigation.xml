@@ -4,22 +4,22 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home"
-        android:title="anasayfa"/>
+        android:icon="@drawable/icon_toolbar_shuffle"
+        android:title="ortaya karışık"/>
 
     <item
         android:id="@+id/navigation_discover"
-        android:icon="@drawable/ic_discover"
+        android:icon="@drawable/icon_toolbar_topics"
         android:title="bugün"/>
 
     <item
         android:id="@+id/navigation_search"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/icon_toolbar_search"
         android:title="ara"/>
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_account"
+        android:icon="@drawable/icon_toolbar_profile"
         android:title="profil"/>
 
 </menu>

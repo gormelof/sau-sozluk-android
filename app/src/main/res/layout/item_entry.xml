@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_item_entry_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#809"
+        android:textColor="@color/gray3"
+        android:textSize="13sp"
+        fontPath="fonts/source_sans_pro/SourceSansPro-Light.ttf"
+        tools:ignore="MissingPrefix"/>
+
+    <TextView
+        android:id="@+id/tv_item_entry_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="facebookdaymışsın gibi hissettin cınım"
+        android:textColor="@color/black"
+        android:textSize="15sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp">
+
+        <TextView
+            android:id="@+id/tv_item_entry_created_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="20.07.2017 16:54"
+            android:textColor="@color/gray3"
+            android:textSize="13sp"
+            fontPath="fonts/source_sans_pro/SourceSansPro-Light.ttf"
+            tools:ignore="MissingPrefix"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="5dp"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:src="@drawable/upvote"/>
+
+            <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="15dp"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                android:src="@drawable/downvote"/>
+
+            <TextView
+                android:id="@+id/tv_item_entry_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kırmızı şortli"
+                android:textColor="@color/baseColor"
+                android:textSize="15sp"
+                fontPath="fonts/source_sans_pro/SourceSansPro-SemiBold.ttf"
+                tools:ignore="MissingPrefix"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

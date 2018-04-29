@@ -1,11 +1,9 @@
-package gormelof.net.sausozluk.views.ui.main;
+package gormelof.net.sausozluk.views.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +14,8 @@ import gormelof.net.sausozluk.UserSession;
 import gormelof.net.sausozluk.api.ApiService;
 import gormelof.net.sausozluk.api.ServiceGenerator;
 import gormelof.net.sausozluk.entities.response.api.ApiResponse;
-import gormelof.net.sausozluk.entities.response.auth.LoginResponse;
 import gormelof.net.sausozluk.entities.response.profile.ProfileResponse;
-import gormelof.net.sausozluk.views.ui.entrypoint.EntryPointActivity;
-import gormelof.net.sausozluk.views.ui.entrypoint.LoginFragment;
+import gormelof.net.sausozluk.views.activities.EntryPointActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

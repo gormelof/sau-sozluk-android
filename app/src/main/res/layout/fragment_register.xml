@@ -6,7 +6,7 @@
     android:background="@color/gray2"
     android:isScrollContainer="true"
     android:scrollbars="none"
-    tools:context=".views.ui.entrypoint.RegisterFragment">
+    tools:context=".views.fragments.RegisterFragment">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"

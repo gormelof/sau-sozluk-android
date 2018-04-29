@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.views.ui.main;
+package gormelof.net.sausozluk.views.fragments;
 
 import android.content.Context;
 import android.net.Uri;

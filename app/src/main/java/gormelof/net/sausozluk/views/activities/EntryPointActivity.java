@@ -1,11 +1,11 @@
-package gormelof.net.sausozluk.views.ui.entrypoint;
+package gormelof.net.sausozluk.views.activities;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 
 import gormelof.net.sausozluk.R;
-import gormelof.net.sausozluk.views.ui.base.BaseActivity;
+import gormelof.net.sausozluk.views.fragments.LoginFragment;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class EntryPointActivity extends BaseActivity {

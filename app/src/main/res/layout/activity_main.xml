@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".views.ui.main.MainActivity">
+    tools:context=".views.activities.MainActivity">
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="?android:attr/windowBackground"
-        app:itemBackground="@color/colorPrimaryDark"
+        app:itemBackground="@color/baseColor"
         app:itemIconTint="@drawable/menu_item_selector"
         app:itemTextColor="@drawable/menu_item_selector"
         app:menu="@menu/navigation"/>

@@ -1,13 +1,10 @@
 package gormelof.net.sausozluk;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 import java.util.HashMap;
-
-import gormelof.net.sausozluk.views.ui.entrypoint.EntryPointActivity;
 
 public class UserSession {
 

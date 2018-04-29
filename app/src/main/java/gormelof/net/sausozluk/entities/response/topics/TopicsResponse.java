@@ -9,18 +9,19 @@ import gormelof.net.sausozluk.entities.Topic;
 
 public class TopicsResponse {
 
-    @SerializedName("entries_count")
-    @Expose
-    private Integer entriesCount;
+    // @SerializedName("entries_count")
+    // @Expose
+    // private Integer entriesCount;
 
     @SerializedName("topics")
     @Expose
     private List<Topic> topics = null;
 
-    @SerializedName("topics_count")
-    @Expose
-    private String topicsCount;
+    // @SerializedName("topics_count")
+    // @Expose
+    // private String topicsCount;
 
+    /*
     public Integer getEntriesCount() {
         return entriesCount;
     }
@@ -28,6 +29,7 @@ public class TopicsResponse {
     public void setEntriesCount(Integer entriesCount) {
         this.entriesCount = entriesCount;
     }
+    */
 
     public List<Topic> getTopics() {
         return topics;
@@ -37,6 +39,7 @@ public class TopicsResponse {
         this.topics = topics;
     }
 
+    /*
     public String getTopicsCount() {
         return topicsCount;
     }
@@ -44,6 +47,7 @@ public class TopicsResponse {
     public void setTopicsCount(String topicsCount) {
         this.topicsCount = topicsCount;
     }
+    */
 
 }
 

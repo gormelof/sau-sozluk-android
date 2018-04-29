@@ -1,4 +1,4 @@
-package gormelof.net.sausozluk.views.ui.main;
+package gormelof.net.sausozluk.views.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,14 +23,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeFragment extends Fragment {
+public class RandomFragment extends Fragment {
 
-    private static final String TAG = HomeFragment.class.getSimpleName().toUpperCase();
+    private static final String TAG = RandomFragment.class.getSimpleName().toUpperCase();
 
-    public HomeFragment() {}
+    public RandomFragment() {}
 
-    public static HomeFragment newInstance() {
-        HomeFragment fragment = new HomeFragment();
+    public static RandomFragment newInstance() {
+        RandomFragment fragment = new RandomFragment();
         return fragment;
     }
 

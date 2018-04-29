@@ -8,21 +8,27 @@ public class Entry {
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("user")
     @Expose
     private User user;
+
     @SerializedName("text")
     @Expose
     private String text;
+
     @SerializedName("upvotes_count")
     @Expose
     private Integer upvotesCount;
+
     @SerializedName("downvotes_count")
     @Expose
     private Integer downvotesCount;
+
     @SerializedName("created_at")
     @Expose
     private String createdAt;
+
     @SerializedName("updated_at")
     @Expose
     private String updatedAt;

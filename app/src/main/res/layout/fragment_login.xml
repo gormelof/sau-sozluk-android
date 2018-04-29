@@ -6,7 +6,7 @@
     android:background="@color/gray2"
     android:isScrollContainer="true"
     android:scrollbars="none"
-    tools:context=".views.ui.entrypoint.LoginFragment">
+    tools:context=".views.fragments.LoginFragment">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/app_name"
-            android:textColor="@color/gray4"
+            android:textColor="@color/black"
             android:textSize="50sp"
             tools:ignore="MissingPrefix"/>
 
@@ -34,7 +34,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:text="giriş yap"
-            android:textColor="@color/gray4"
+            android:textColor="@color/black"
             android:textSize="25sp"
             tools:ignore="MissingPrefix"/>
 
@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="e-posta:"
-                android:textColor="@color/gray4"
+                android:textColor="@color/black"
                 android:textSize="15sp"/>
 
             <EditText
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="parola:"
-                android:textColor="@color/gray4"
+                android:textColor="@color/black"
                 android:textSize="15sp"/>
 
             <EditText
@@ -113,7 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ya "
-                    android:textColor="@color/gray4"
+                    android:textColor="@color/black"
                     android:textSize="15sp"/>
 
                 <TextView
@@ -121,14 +121,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="kayıt olun"
-                    android:textColor="@color/green1"
+                    android:textColor="@color/baseColor"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" ya da "
-                    android:textColor="@color/gray4"
+                    android:textColor="@color/black"
                     android:textSize="15sp"/>
 
                 <TextView
@@ -136,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="şifrenizi unutun"
-                    android:textColor="@color/green1"
+                    android:textColor="@color/baseColor"
                     android:textSize="16sp"/>
 
             </LinearLayout>
