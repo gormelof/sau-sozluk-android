@@ -1,6 +1,9 @@
 package gormelof.net.sausozluk.views.activities;
 
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import gormelof.net.sausozluk.R;
@@ -8,6 +11,9 @@ import gormelof.net.sausozluk.api.ApiService;
 import gormelof.net.sausozluk.api.ServiceGenerator;
 import gormelof.net.sausozluk.entities.response.api.ApiResponse;
 import gormelof.net.sausozluk.entities.response.entries.TopicEntriesResponse;
+import gormelof.net.sausozluk.helpers.SeparatorDecoration;
+import gormelof.net.sausozluk.views.adapters.EntryAdapter;
+import gormelof.net.sausozluk.views.adapters.TopicAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -33,6 +39,16 @@ public class EntriesActivity extends BaseActivity {
                 if (response.isSuccessful()) {
 
                     tvTopicTitle.setText(response.body().getData().getTitle());
+
+                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_activity_entries_list);
+                    SeparatorDecoration decoration = new SeparatorDecoration(getApplicationContext(), getResources().getColor(R.color.grey300), 0.5f);
+                    EntryAdapter entryAdapter = new EntryAdapter(getApplicationContext(), response.body().getData().getEntries());
+                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+                    linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                    recyclerView.setLayoutManager(linearLayoutManager);
+                    recyclerView.addItemDecoration(decoration);
+                    recyclerView.setItemAnimator(new DefaultItemAnimator());
+                    recyclerView.setAdapter(entryAdapter);
 
                 } else {
 
