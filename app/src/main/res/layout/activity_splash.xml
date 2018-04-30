@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:text="saü sözlük"
         android:textSize="50sp"
-        android:textColor="@color/baseColor"
+        android:textColor="@color/appColor1"
         fontPath="fonts/baloo/Baloo-Regular.ttf"
         tools:ignore="MissingPrefix"/>
 

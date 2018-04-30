@@ -4,28 +4,32 @@
     <!-- start app general colors -->
     <color name="colorPrimary">#FFFFFF</color>
     <color name="colorPrimaryDark">#241B70</color>
-    <color name="colorAccent">#241B70</color>
+    <color name="colorAccent">#51489A</color>
     <!-- end app general colors -->
 
+    <!-- begin base colors -->
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <!-- end base colors -->
 
-    <!-- start app color platte -->
-    <color name="gray1">#222222</color>
-    <color name="gray2">#272727</color>
-    <color name="gray3">#575757</color>
-    <color name="gray4">#BDBDBD</color>
-    <color name="gray5">#333333</color>
-    <color name="gray6">#666666</color>
-    <color name="gray7">#CCCCCC</color>
-    <color name="green1">#53A245</color>
-    <color name="yellow1">#FFB96E</color>
-    <!-- end app color platte -->
+    <!-- begin grey colors -->
+    <color name="grey50">#FAFAFA</color>
+    <color name="grey100">#F5F5F5</color>
+    <color name="grey200">#EEEEEE</color>
+    <color name="grey300">#E0E0E0</color>
+    <color name="grey400">#BDBDBD</color>
+    <color name="grey500">#9E9E9E</color>
+    <color name="grey600">#757575</color>
+    <color name="grey700">#616161</color>
+    <color name="grey800">#424242</color>
+    <color name="grey900">#212121</color>
+    <!-- end grey colors -->
 
-    <!-- begin new colors -->
-    <color name="baseColor">#241B70</color>
-    <color name="toolbarGray">#C1C1C1</color>
-    <color name="listSeparatorGray">#C1C1C1C1</color>
-    <!-- end new colors -->
+    <!-- begin app colors -->
+    <color name="appColor1">#241B70</color>
+    <color name="appColor2">#51489A</color>
+    <color name="appColor3">#362C8B</color>
+    <color name="appColor4">#130B57</color>
+    <!-- end app colors -->
 
 </resources>

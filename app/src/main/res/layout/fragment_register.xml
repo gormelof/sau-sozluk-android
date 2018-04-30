@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray2"
+    android:background="@color/white"
     android:isScrollContainer="true"
     android:scrollbars="none"
     tools:context=".views.fragments.RegisterFragment">
@@ -23,7 +23,7 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/app_name"
             android:textSize="50sp"
-            android:textColor="@color/gray4"
+            android:textColor="@color/appColor1"
             fontPath="fonts/baloo/Baloo-Regular.ttf"
             tools:ignore="MissingPrefix"/>
 
@@ -34,7 +34,7 @@
             android:layout_marginTop="10dp"
             android:text="kayıt ol"
             android:textSize="25sp"
-            android:textColor="@color/gray4"
+            android:textColor="@color/appColor1"
             fontPath="fonts/source_sans_pro/SourceSansPro-SemiBold.ttf"
             tools:ignore="MissingPrefix"/>
 
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="nick:"
                 android:textSize="15sp"
-                android:textColor="@color/gray4"/>
+                android:textColor="@color/appColor1"/>
 
             <EditText
                 android:id="@+id/et_fragment_register_nick"
@@ -64,7 +64,7 @@
                 android:background="@drawable/bg_login_input"
                 android:ems="10"
                 android:hint="nick"
-                android:textColorHint="@color/gray3"
+                android:textColorHint="@color/grey500"
                 android:textSize="15sp"
                 android:inputType="textEmailAddress"/>
 
@@ -74,7 +74,7 @@
                 android:layout_marginTop="10dp"
                 android:text="e-posta:"
                 android:textSize="15sp"
-                android:textColor="@color/gray4"/>
+                android:textColor="@color/appColor1"/>
 
             <EditText
                 android:id="@+id/et_fragment_register_email"
@@ -88,7 +88,7 @@
                 android:background="@drawable/bg_login_input"
                 android:ems="10"
                 android:hint="e-posta"
-                android:textColorHint="@color/gray3"
+                android:textColorHint="@color/grey500"
                 android:textSize="15sp"
                 android:inputType="textEmailAddress"/>
 
@@ -98,7 +98,7 @@
                 android:layout_marginTop="10dp"
                 android:text="parola:"
                 android:textSize="15sp"
-                android:textColor="@color/gray4"/>
+                android:textColor="@color/appColor1"/>
 
             <EditText
                 android:id="@+id/et_fragment_register_password"
@@ -112,7 +112,7 @@
                 android:background="@drawable/bg_login_input"
                 android:ems="10"
                 android:hint="parola"
-                android:textColorHint="@color/gray3"
+                android:textColorHint="@color/grey500"
                 android:textSize="15sp"
                 android:inputType="textPassword"/>
 
@@ -138,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:text="hesabım var "
                     android:textSize="15sp"
-                    android:textColor="@color/gray4"/>
+                    android:textColor="@color/grey900"/>
 
                 <TextView
                     android:id="@+id/tv_fragment_register_go_login_page"
@@ -146,14 +146,14 @@
                     android:layout_height="wrap_content"
                     android:text="giriş"
                     android:textSize="16sp"
-                    android:textColor="@color/green1"/>
+                    android:textColor="@color/appColor1"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" sayfasına dön "
                     android:textSize="15sp"
-                    android:textColor="@color/gray4"/>
+                    android:textColor="@color/grey900"/>
 
             </LinearLayout>
 

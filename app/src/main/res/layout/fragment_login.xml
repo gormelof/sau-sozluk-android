@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray2"
+    android:background="@color/white"
     android:isScrollContainer="true"
     android:scrollbars="none"
     tools:context=".views.fragments.LoginFragment">
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="@string/app_name"
-            android:textColor="@color/black"
+            android:textColor="@color/appColor1"
             android:textSize="50sp"
             tools:ignore="MissingPrefix"/>
 
@@ -34,7 +34,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:text="giriş yap"
-            android:textColor="@color/black"
+            android:textColor="@color/appColor1"
             android:textSize="25sp"
             tools:ignore="MissingPrefix"/>
 
@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="e-posta:"
-                android:textColor="@color/black"
+                android:textColor="@color/appColor1"
                 android:textSize="15sp"/>
 
             <EditText
@@ -65,7 +65,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:textColorHint="@color/gray3"
+                android:textColorHint="@color/grey500"
                 android:textSize="15sp"/>
 
             <TextView
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="parola:"
-                android:textColor="@color/black"
+                android:textColor="@color/appColor1"
                 android:textSize="15sp"/>
 
             <EditText
@@ -89,7 +89,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:paddingTop="5dp"
-                android:textColorHint="@color/gray3"
+                android:textColorHint="@color/grey500"
                 android:textSize="15sp"/>
 
             <Button
@@ -113,7 +113,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ya "
-                    android:textColor="@color/black"
+                    android:textColor="@color/grey900"
                     android:textSize="15sp"/>
 
                 <TextView
@@ -121,14 +121,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="kayıt olun"
-                    android:textColor="@color/baseColor"
+                    android:textColor="@color/appColor1"
                     android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" ya da "
-                    android:textColor="@color/black"
+                    android:textColor="@color/grey900"
                     android:textSize="15sp"/>
 
                 <TextView
@@ -136,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="şifrenizi unutun"
-                    android:textColor="@color/baseColor"
+                    android:textColor="@color/appColor1"
                     android:textSize="16sp"/>
 
             </LinearLayout>

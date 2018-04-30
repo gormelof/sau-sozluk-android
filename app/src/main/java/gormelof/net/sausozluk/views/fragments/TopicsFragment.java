@@ -54,7 +54,7 @@ public class TopicsFragment extends Fragment {
                     Log.i(TAG, "SUCCESS!");
 
                     RecyclerView recyclerView = (RecyclerView) topicView.findViewById(R.id.rv_fragment_discover_topic_list);
-                    SeparatorDecoration decoration = new SeparatorDecoration(getContext(), getResources().getColor(R.color.listSeparatorGray), 0.5f);
+                    SeparatorDecoration decoration = new SeparatorDecoration(getContext(), getResources().getColor(R.color.grey300), 0.5f);
                     TopicAdapter topicAdapter = new TopicAdapter(getContext(), response.body().getData().getTopics());
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
                     linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
