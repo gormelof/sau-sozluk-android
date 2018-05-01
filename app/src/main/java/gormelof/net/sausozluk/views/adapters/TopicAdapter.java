@@ -62,4 +62,8 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
         }
     }
 
+    public void clear() {
+        mTopicList.clear();
+        notifyDataSetChanged();
+    }
 }

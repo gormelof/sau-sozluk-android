@@ -52,7 +52,7 @@ public class RandomFragment extends Fragment {
                     Log.i(TAG, "SUCCESS!");
 
                     RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_fragment_home_random_list);
-                    SeparatorDecoration decoration = new SeparatorDecoration(getContext(), getResources().getColor(R.color.grey300), 0.5f);
+                    SeparatorDecoration decoration = new SeparatorDecoration(getContext(), LinearLayoutManager.VERTICAL, 16);
                     HomeAdapter homeAdapter = new HomeAdapter(getContext(), response.body().getData());
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
                     linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);

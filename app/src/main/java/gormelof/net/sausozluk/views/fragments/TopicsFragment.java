@@ -1,9 +1,10 @@
 package gormelof.net.sausozluk.views.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.List;
+
 import gormelof.net.sausozluk.R;
 import gormelof.net.sausozluk.api.ApiService;
 import gormelof.net.sausozluk.api.ServiceGenerator;
@@ -26,13 +30,25 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TopicsFragment extends Fragment {
+
+    // log tag
     private static final String TAG = TopicsFragment.class.getSimpleName().toUpperCase();
 
-    public TopicsFragment() {}
+    // fields
+    private RecyclerView mRvTopicList;
+    private View mTopicView;
+    private ProgressDialog mPdLoading;
+    private TopicAdapter mTopicAdapter;
+    private SwipeRefreshLayout mSrlTopicsContainer;
+    private List<Topic> topics;
 
+    // constructor
+    public TopicsFragment() {
+    }
+
+    // static constructor
     public static TopicsFragment newInstance() {
-        TopicsFragment fragment = new TopicsFragment();
-        return fragment;
+        return new TopicsFragment();
     }
 
     @Override
@@ -42,44 +58,39 @@ public class TopicsFragment extends Fragment {
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View topicView = inflater.inflate(R.layout.fragment_discover, container, false);
+        mTopicView = inflater.inflate(R.layout.fragment_topics, container, false);
 
+        initViews();
+
+        fetchTopicsAsync();
+
+        return mTopicView;
+    }
+
+    /**
+     * asenkron olarak başlıkları getirir
+     * fragment onCreateView olayında tetiklenir
+     * veriler getirilene kadar ekranda "yükleniyor..." progress'i gösterir
+     */
+    public void fetchTopicsAsync() {
         ApiService apiService = ServiceGenerator.createService(ApiService.class);
         Call<ApiResponse<TopicsResponse>> topicCall = apiService.getTopics(20);
+
+        mPdLoading.setMessage("yükleniyor...");
+        mPdLoading.show();
 
         topicCall.enqueue(new Callback<ApiResponse<TopicsResponse>>() {
             @Override
             public void onResponse(Call<ApiResponse<TopicsResponse>> call, final Response<ApiResponse<TopicsResponse>> response) {
                 if (response.isSuccessful()) {
-                    Log.i(TAG, "SUCCESS!");
+                    topics = response.body().getData().getTopics();
 
-                    RecyclerView recyclerView = (RecyclerView) topicView.findViewById(R.id.rv_fragment_discover_topic_list);
-                    SeparatorDecoration decoration = new SeparatorDecoration(getContext(), getResources().getColor(R.color.grey300), 0.5f);
-                    TopicAdapter topicAdapter = new TopicAdapter(getContext(), response.body().getData().getTopics());
-                    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-                    linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                    recyclerView.setLayoutManager(linearLayoutManager);
-                    recyclerView.addItemDecoration(decoration);
-                    recyclerView.setItemAnimator(new DefaultItemAnimator());
-                    recyclerView.setAdapter(topicAdapter);
+                    mTopicAdapter = new TopicAdapter(getContext(), topics);
+                    mRvTopicList.setAdapter(mTopicAdapter);
 
-                    recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(View view, int position) {
-                            Log.i(TAG, "ITEM CLICKED");
-                            Topic topic = response.body().getData().getTopics().get(position);
+                    initListItemClick();
 
-                            Intent intent = new Intent(getContext(), EntriesActivity.class);
-                            intent.putExtra("TOPIC_ID", topic.getId());
-                            startActivity(intent);
-                        }
-
-                        @Override
-                        public void onLongItemClick(View view, int position) {
-
-                        }
-
-                    }));
+                    mPdLoading.dismiss();
                 }
             }
 
@@ -89,6 +100,114 @@ public class TopicsFragment extends Fragment {
             }
         });
 
-        return topicView;
     }
+
+    /**
+     * asenkron olarak başlıkları yeniler
+     */
+    public void refreshTopicsAsync() {
+        ApiService apiService = ServiceGenerator.createService(ApiService.class);
+        Call<ApiResponse<TopicsResponse>> topicCall = apiService.getTopics(20);
+
+
+        topicCall.enqueue(new Callback<ApiResponse<TopicsResponse>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<TopicsResponse>> call, final Response<ApiResponse<TopicsResponse>> response) {
+                if (response.isSuccessful()) {
+                    clearTopics(mTopicAdapter);
+                    topics = response.body().getData().getTopics();
+                    mTopicAdapter = new TopicAdapter(getContext(), topics);
+                    mRvTopicList.setAdapter(mTopicAdapter);
+                    mTopicAdapter.notifyDataSetChanged();
+                    initListItemClick();
+                    mSrlTopicsContainer.setRefreshing(false);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse<TopicsResponse>> call, Throwable t) {
+                Log.e(TAG, t.getMessage());
+            }
+        });
+    }
+
+    /**
+     * başlıkları temizler
+     * yenileme işlemi için kullanılır
+     * @param topicAdapter başlık adaptörü
+     */
+    public void clearTopics(TopicAdapter topicAdapter) {
+        topicAdapter.clear();
+    }
+
+    /**
+     * view'lar hazırlar
+     */
+    public void initViews() {
+        initRecyclerView();
+        initProgressView();
+        initRefreshLayout();
+    }
+
+    /**
+     * recycler view'ı hazırlar
+     */
+    public void initRecyclerView() {
+        mRvTopicList = mTopicView.findViewById(R.id.rv_fragment_discover_topic_list);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRvTopicList.setLayoutManager(linearLayoutManager);
+
+        SeparatorDecoration decoration = new SeparatorDecoration(getContext(), LinearLayoutManager.VERTICAL, 16);
+        mRvTopicList.addItemDecoration(decoration);
+
+        mRvTopicList.setItemAnimator(new DefaultItemAnimator());
+    }
+
+    /**
+     * progress view' hazırlar
+     */
+    public void initProgressView() {
+        mPdLoading = new ProgressDialog(getContext());
+        mPdLoading.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        mPdLoading.setIndeterminate(true);
+        mPdLoading.setCancelable(true);
+    }
+
+    /**
+     * refresh layout'u hazırlar
+     */
+    public void initRefreshLayout() {
+        mSrlTopicsContainer = mTopicView.findViewById(R.id.srl_fragment_topics_container);
+        mSrlTopicsContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshTopicsAsync();
+            }
+        });
+    }
+
+    /**
+     * liste elemanlarına tıklama olayını hazırlar
+     */
+    public void initListItemClick() {
+        mRvTopicList.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), mRvTopicList,
+                new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Topic topic = topics.get(position);
+                        Intent intent = new Intent(getContext(), EntriesActivity.class);
+                        intent.putExtra("TOPIC_ID", topic.getId());
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onLongItemClick(View view, int position) {
+                        // nothing
+                    }
+
+                }));
+    }
+
 }

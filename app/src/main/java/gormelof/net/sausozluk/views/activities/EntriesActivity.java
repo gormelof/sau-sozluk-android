@@ -41,7 +41,7 @@ public class EntriesActivity extends BaseActivity {
                     tvTopicTitle.setText(response.body().getData().getTitle());
 
                     RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_activity_entries_list);
-                    SeparatorDecoration decoration = new SeparatorDecoration(getApplicationContext(), getResources().getColor(R.color.grey300), 0.5f);
+                    SeparatorDecoration decoration = new SeparatorDecoration(getApplicationContext(), LinearLayoutManager.VERTICAL, 16);
                     EntryAdapter entryAdapter = new EntryAdapter(getApplicationContext(), response.body().getData().getEntries());
                     LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
                     linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
