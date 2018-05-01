@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.ProgressBar;
 
 import java.util.List;
 
@@ -35,12 +37,17 @@ public class TopicsFragment extends Fragment {
     private static final String TAG = TopicsFragment.class.getSimpleName().toUpperCase();
 
     // fields
+    private LinearLayoutManager mLinearLayoutManager;
     private RecyclerView mRvTopicList;
     private View mTopicView;
     private ProgressDialog mPdLoading;
+    private ProgressBar mPbLoadMore;
     private TopicAdapter mTopicAdapter;
     private SwipeRefreshLayout mSrlTopicsContainer;
     private List<Topic> topics;
+
+    private boolean isScrolling = false;
+    private int currentItems, totalItems, scrollOutItems;
 
     // constructor
     public TopicsFragment() {
@@ -147,17 +154,18 @@ public class TopicsFragment extends Fragment {
         initRecyclerView();
         initProgressView();
         initRefreshLayout();
+        test();
     }
 
     /**
      * recycler view'ı hazırlar
      */
     public void initRecyclerView() {
-        mRvTopicList = mTopicView.findViewById(R.id.rv_fragment_discover_topic_list);
+        mRvTopicList = mTopicView.findViewById(R.id.rv_fragment_topics_topic_list);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRvTopicList.setLayoutManager(linearLayoutManager);
+        mLinearLayoutManager = new LinearLayoutManager(getContext());
+        mLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRvTopicList.setLayoutManager(mLinearLayoutManager);
 
         SeparatorDecoration decoration = new SeparatorDecoration(getContext(), LinearLayoutManager.VERTICAL, 16);
         mRvTopicList.addItemDecoration(decoration);
@@ -173,6 +181,8 @@ public class TopicsFragment extends Fragment {
         mPdLoading.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         mPdLoading.setIndeterminate(true);
         mPdLoading.setCancelable(true);
+
+        mPbLoadMore = mTopicView.findViewById(R.id.rv_fragment_topics_load_more_progress);
     }
 
     /**
@@ -208,6 +218,59 @@ public class TopicsFragment extends Fragment {
                     }
 
                 }));
+    }
+
+    public void test() {
+        mRvTopicList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
+                if (newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
+                    isScrolling = true;
+                }
+
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                currentItems = mLinearLayoutManager.getChildCount();
+                totalItems = mLinearLayoutManager.getItemCount();
+                scrollOutItems = mLinearLayoutManager.findFirstCompletelyVisibleItemPosition();
+
+                if (isScrolling && (currentItems + scrollOutItems == totalItems)) {
+                    // fetch data
+
+                    // get list last item
+                    Topic lastTopic = topics.get(topics.size() - 1);
+
+                    ApiService apiService = ServiceGenerator.createService(ApiService.class);
+                    Call<ApiResponse<TopicsResponse>> topicCall = apiService.getMoreTopics(20, lastTopic.getCreatedAt());
+                    mPbLoadMore.setVisibility(View.VISIBLE);
+                    topicCall.enqueue(new Callback<ApiResponse<TopicsResponse>>() {
+                        @Override
+                        public void onResponse(Call<ApiResponse<TopicsResponse>> call, final Response<ApiResponse<TopicsResponse>> response) {
+                            if (response.isSuccessful()) {
+                                List<Topic> oldTopics = response.body().getData().getTopics();
+
+                                topics.addAll(oldTopics);
+                                mTopicAdapter.notifyDataSetChanged();
+                                initListItemClick();
+                                mPbLoadMore.setVisibility(View.GONE);
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ApiResponse<TopicsResponse>> call, Throwable t) {
+                            Log.e(TAG, t.getMessage());
+                        }
+                    });
+
+                }
+            }
+        });
     }
 
 }
